@@ -11,7 +11,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # --------------------
 API_ID = int(os.getenv("26741021"))
 API_HASH = os.getenv("7c5af0b88c33d2f5cce8df5d82eb2a94")
-BOT_TOKEN = os.getenv("")
+BOT_TOKEN = os.getenv("8178385725:AAFGuJcDUmsML8c23vMvCWX0FbqcdX-S9nQ")
 OWNER_ID = int(os.getenv("6859451629"))
 MONGO_URI = os.getenv("mongodb+srv://akimax8182:akimax8182@cluster0.drfp9pq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
