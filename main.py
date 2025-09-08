@@ -142,7 +142,7 @@ def home():
     return "🤖 Bot is alive!"
 
 def run_flask():
-    app_web.run(host="0.0.0.0", port=int(os.getenv("PORT", 10000)))
+    app_web.run(host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
 
 if __name__ == "__main__":
     # Flask ko background thread me start karo
