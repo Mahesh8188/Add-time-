@@ -9,11 +9,11 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # --------------------
 # Environment Variables
 # --------------------
-API_ID = int(environ.get("API_ID", "26741021"))
-API_HASH = environ.get("API_HASH", "7c5af0b88c33d2f5cce8df5d82eb2a94")
-BOT_TOKEN = environ.get("BOT_TOKEN", "")
-OWNER_ID = environ.get("OWNER_ID", "6859451629")
-MONGO_URI = environ.get("MONGO_URI", "mongodb+srv://akimax8182:akimax8182@cluster0.drfp9pq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+API_ID = int(os.getenv("API_ID", "26741021"))
+API_HASH = os.getenv("API_HASH", "7c5af0b88c33d2f5cce8df5d82eb2a94")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+OWNER_ID = int(os.getenv("OWNER_ID", "6859451629"))
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://akimax8182:akimax8182@cluster0.drfp9pq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 # --------------------
 # Bot & DB Setup
