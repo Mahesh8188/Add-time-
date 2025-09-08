@@ -1,7 +1,7 @@
 import os
 import asyncio
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from pyrogram import Client, filters, idle
 from pyrogram.errors import UserAdminInvalid
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -63,7 +63,7 @@ async def add_user(_, message):
     if delta is None and time_str != "lifetime":
         return await message.reply("❌ Invalid time format. Use m/h/d/w/y or lifetime.", quote=True)
 
-    expire_at = None if delta is None else datetime.utcnow() + delta
+    expire_at = None if delta is None else datetime.now(timezone.utc) + delta
     chat_id = message.chat.id
 
     try:
@@ -103,7 +103,7 @@ async def members_list(_, message):
 # --------------------
 async def check_expired():
     while True:
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         cursor = members_col.find({"expire_at": {"$lte": now}})
         async for member in cursor:
             try:
